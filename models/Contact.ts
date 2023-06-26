@@ -33,7 +33,7 @@ export const ContactData: Contact[] = [
     id: 1989,
     name: "Avery Johnson",
     phone: "555-123-4567",
-    image: "https://randomuser.me/api/portraits/men/1.jpg",
+    image: "https://randomuser.me/api/portraits/men/13.jpg",
     isFavorite: 1,
   },
   {
@@ -135,7 +135,7 @@ export function groupContacts(contacts: Contact[]): SectionedContact[] {
     );
     result.push({ title: letter, data: sortedContacts });
   });
-  return result;
+  return result.sort((a, b) => a.title.localeCompare(b.title));
 }
 
 export function getFavoriteContacts(contacts: Contact[]) {
