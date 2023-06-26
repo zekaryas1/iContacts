@@ -54,25 +54,20 @@ export default function RootLayout() {
 }
 
 function RootLayoutNav() {
-  const colorScheme = useColorScheme();
-  //colorScheme === "dark" ? DarkTheme : DefaultTheme
-
   return (
     <>
-      <ThemeProvider value={DefaultTheme}>
-        <Stack
-          initialRouteName="index"
-          screenOptions={{
-            headerStyle: {
-              backgroundColor: "#222831",
-            },
-            headerTintColor: "#EEEEEE",
-            headerTitleStyle: {
-              fontWeight: "bold",
-            },
-          }}
-        />
-      </ThemeProvider>
+      <Stack
+        initialRouteName="index"
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: "#222831",
+          },
+          headerTintColor: "#EEEEEE",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+        }}
+      />
     </>
   );
 }
