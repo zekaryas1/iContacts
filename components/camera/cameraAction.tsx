@@ -24,7 +24,10 @@ export default function CameraActions({
       />
       <MaterialIcons.Button
         name="linked-camera"
-        style={styles.iconButtons}
+        style={{
+          ...styles.iconButtons,
+          backgroundColor: CommonStyles.color.primary,
+        }}
         size={50}
         onPress={takePicture}
       />
@@ -41,7 +44,7 @@ export default function CameraActions({
 const styles = StyleSheet.create({
   iconButtons: {
     paddingRight: CommonStyles.icon.paddingRight,
-    color: "#fff",
-    backgroundColor: "#00ADB5",
+    color: CommonStyles.color.white,
+    backgroundColor: CommonStyles.color.secondaryDark,
   },
 });

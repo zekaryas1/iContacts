@@ -24,10 +24,10 @@ export function ContactDetailActionButtons({
           style={{
             paddingRight: CommonStyles.icon.paddingRight,
             borderWidth: 1,
-            borderColor: CommonStyles.button.primaryColor,
+            borderColor: CommonStyles.color.primary,
           }}
           size={CommonStyles.icon.size}
-          color={CommonStyles.button.primaryColor}
+          color={CommonStyles.color.primary}
           backgroundColor={"transparent"}
           onPress={onPlayPress}
         />
@@ -36,17 +36,17 @@ export function ContactDetailActionButtons({
           style={{
             paddingRight: CommonStyles.icon.paddingRight,
             borderWidth: 1,
-            borderColor: CommonStyles.button.primaryColor,
+            borderColor: CommonStyles.color.primary,
           }}
           size={CommonStyles.icon.size}
-          color={CommonStyles.button.primaryColor}
+          color={CommonStyles.color.primary}
           backgroundColor={"transparent"}
           onPress={onEditPress}
         />
       </View>
       <Ionicons.Button
         name="call"
-        backgroundColor={CommonStyles.button.primaryColor}
+        backgroundColor={CommonStyles.color.primary}
         style={{
           width: 100,
           flex: 1,

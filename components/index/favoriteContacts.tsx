@@ -1,7 +1,8 @@
 import { FlatList, View, Text, StyleSheet, Pressable } from "react-native";
 import { Image } from "expo-image";
-import { Contact, ContactData } from "../../models/Contact";
+import { Contact } from "../../models/Contact";
 import { Fontisto } from "@expo/vector-icons";
+import { CommonStyles } from "../../constants/CommonStyles";
 
 interface FavoriteContactsProps {
   favoriteContacts: Contact[];
@@ -15,7 +16,11 @@ export default function FavoriteContacts({
   return (
     <View>
       <View style={favoriteContactsStyles.headerTextContainer}>
-        <Fontisto name="favorite" size={18} color="#393E46" />
+        <Fontisto
+          name="favorite"
+          size={18}
+          color={CommonStyles.color.secondaryDark}
+        />
         <Text style={favoriteContactsStyles.headerText}>
           Favorites contacts
         </Text>
@@ -80,10 +85,9 @@ const favoriteContactsStyles = StyleSheet.create({
     marginBottom: 10,
   },
   headerText: {
-    fontFamily: "SpaceMono",
+    fontFamily: CommonStyles.font.primary,
     fontSize: 20,
-    fontWeight: "bold",
-    color: "#353535",
+    color: CommonStyles.color.secondaryDark,
   },
 });
 
@@ -92,10 +96,10 @@ const favoriteContactStyles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     width: 100,
-    backgroundColor: "#fff",
+    backgroundColor: CommonStyles.color.white,
     marginRight: 15,
     borderRadius: 5,
-    borderBottomColor: "#00ADB5",
+    borderBottomColor: CommonStyles.color.primary,
     borderBottomWidth: 2,
     padding: 10,
     marginBottom: 10,
@@ -105,15 +109,13 @@ const favoriteContactStyles = StyleSheet.create({
     width: 50,
     height: 50,
     alignSelf: "center",
-    borderWidth: 1.5,
-    borderColor: "#00ADB5",
+    borderWidth: 0.15,
     borderRadius: 100,
     marginBottom: 5,
-    backgroundColor: "#393E46",
   },
   contactName: {
+    fontFamily: CommonStyles.font.primary,
     textAlign: "center",
-    fontWeight: "400",
-    color: "#393E46",
+    fontSize: 12,
   },
 });

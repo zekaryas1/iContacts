@@ -51,7 +51,7 @@ export default function AddContact() {
         name="delete"
         style={styles.deleteButton}
         size={CommonStyles.icon.size}
-        color={"red"}
+        color={CommonStyles.color.danger}
         backgroundColor={"transparent"}
         onPress={deleteUser}
       />
@@ -168,7 +168,13 @@ export default function AddContact() {
           marginBottom: 10,
         }}
       >
-        <Text>is user on favorite list?</Text>
+        <Text
+          style={{
+            fontFamily: CommonStyles.font.primary,
+          }}
+        >
+          is user on favorite list?
+        </Text>
         <Switch
           value={contact.isFavorite == 1}
           onValueChange={(value) => {
@@ -186,8 +192,8 @@ export default function AddContact() {
           name={id === "new" ? "adduser" : "reload1"}
           style={styles.mainButton}
           size={CommonStyles.icon.size}
-          color={"white"}
-          backgroundColor={CommonStyles.button.primaryColor}
+          color={CommonStyles.color.white}
+          backgroundColor={CommonStyles.color.primary}
           onPress={manageUser}
         />
       </View>
@@ -213,7 +219,7 @@ const styles = StyleSheet.create({
   },
   deleteButton: {
     paddingRight: CommonStyles.icon.paddingRight,
-    borderColor: "red",
+    borderColor: CommonStyles.color.danger,
     borderWidth: 1,
   },
 });

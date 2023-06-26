@@ -23,7 +23,7 @@ export function ContactProfileImage({
           ...CommonStyles.contactPhoto,
           alignSelf: "center",
           marginBottom: 20,
-          backgroundColor: "#393E46",
+          borderWidth: 0.45,
         }}
       />
     </Pressable>

@@ -99,10 +99,16 @@ function NoDetail() {
         }}
         source={require("../../assets/images/nodetail.png")}
       />
-      <Text>This content doesn't exist, it might be deleted</Text>
+      <Text
+        style={{
+          fontFamily: CommonStyles.font.primary,
+        }}
+      >
+        This content doesn't exist, it might be deleted
+      </Text>
       <Button
         title="Go back"
-        color={"#00ADB5"}
+        color={CommonStyles.color.primary}
         onPress={() => {
           router.back();
         }}

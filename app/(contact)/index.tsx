@@ -67,7 +67,10 @@ export default function Contacts() {
   if (allContacts.length == 0) {
     return (
       <NoContact
-        onReloadPress={getOrSearchAllContact}
+        onReloadPress={() => {
+          setSearchText("");
+          getOrSearchAllContact();
+        }}
         onHeaderButtonPress={() => {
           listenToReloadEvent();
           router.push("/manage?id=new");
@@ -179,8 +182,18 @@ function NoContact({
         }}
         source={require("../../assets/images/nocontact.png")}
       />
-      <Text>Click The plus icon on the header to add or</Text>
-      <Button title="Reload" color={"#00ADB5"} onPress={onReloadPress} />
+      <Text
+        style={{
+          fontFamily: CommonStyles.font.primary,
+        }}
+      >
+        Click The plus icon on the header to add or
+      </Text>
+      <Button
+        title="Reload"
+        color={CommonStyles.color.primary}
+        onPress={onReloadPress}
+      />
     </View>
   );
 }

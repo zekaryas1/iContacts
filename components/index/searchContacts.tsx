@@ -20,14 +20,7 @@ export default function SearchContacts({
         placeholder="Search contacts"
         value={value}
         onChangeText={onChangeText}
-        style={{
-          flex: 1,
-          borderWidth: 1,
-          borderRadius: 3,
-          padding: 5,
-          paddingLeft: 15,
-          marginVertical: 20,
-        }}
+        style={styles.searchContactsTextInput}
       />
       <Conditional
         when={value.length > 0}
@@ -36,7 +29,7 @@ export default function SearchContacts({
             name="cancel-presentation"
             onPress={onClear}
             size={CommonStyles.icon.size}
-            color="white"
+            color={CommonStyles.color.white}
             style={styles.icon}
           />
         }
@@ -56,5 +49,10 @@ const styles = StyleSheet.create({
     paddingRight: CommonStyles.icon.paddingRight,
     paddingLeft: 10,
     backgroundColor: CommonStyles.icon.backgroundColor,
+  },
+  searchContactsTextInput: {
+    ...CommonStyles.textInput,
+    flex: 1,
+    marginVertical: 20,
   },
 });

@@ -66,14 +66,14 @@ function CallSection({
     <>
       <View style={callSectionStyles.divider} />
       <Ionicons.Button
-        backgroundColor="#EEEEEE"
+        backgroundColor={CommonStyles.color.whitish}
         style={{
           paddingRight: CommonStyles.icon.paddingRight,
         }}
         onPress={onPress}
         name="call"
         size={CommonStyles.icon.size}
-        color={CommonStyles.button.primaryColor}
+        color={CommonStyles.color.primary}
       />
     </>
   );
@@ -82,7 +82,7 @@ function CallSection({
 const callSectionStyles = StyleSheet.create({
   divider: {
     width: 0.5,
-    backgroundColor: "gray",
+    backgroundColor: CommonStyles.color.primaryDark,
     height: 40,
   },
 });
@@ -96,8 +96,8 @@ const detailSectionStyles = StyleSheet.create({
   profileImageContainer: {
     height: 50,
     width: 50,
+    borderWidth: 0.15,
     borderRadius: 50,
-    backgroundColor: "#393E46",
   },
   profileImage: {
     flex: 1,
@@ -105,18 +105,18 @@ const detailSectionStyles = StyleSheet.create({
     borderRadius: 50,
   },
   contactNameText: {
-    fontSize: 17,
-    fontWeight: "700",
+    fontFamily: CommonStyles.font.primary,
+    fontSize: 18,
   },
 });
 
 const contactCardStyles = StyleSheet.create({
   container: {
-    backgroundColor: "#fff",
+    backgroundColor: CommonStyles.color.white,
     marginBottom: 10,
     height: 70,
     borderRadius: 5,
-    borderLeftColor: "#00ADB5",
+    borderLeftColor: CommonStyles.color.primary,
     borderLeftWidth: 2,
     flexDirection: "row",
     justifyContent: "space-between",

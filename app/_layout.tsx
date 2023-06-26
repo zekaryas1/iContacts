@@ -9,6 +9,7 @@ import { SplashScreen, Stack } from "expo-router";
 import { useEffect } from "react";
 import { useColorScheme } from "react-native";
 import { createContactTable, dropContactTable } from "../db/dbOperations";
+import { CommonStyles } from "../constants/CommonStyles";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -23,6 +24,7 @@ export const unstable_settings = {
 export default function RootLayout() {
   const [loaded, error] = useFonts({
     SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
+    Belanosima: require("../assets/fonts/Belanosima-Regular.ttf"),
     ...FontAwesome.font,
   });
 
@@ -60,11 +62,11 @@ function RootLayoutNav() {
         initialRouteName="index"
         screenOptions={{
           headerStyle: {
-            backgroundColor: "#222831",
+            backgroundColor: CommonStyles.color.primaryDark,
           },
-          headerTintColor: "#EEEEEE",
+          headerTintColor: CommonStyles.color.whitish,
           headerTitleStyle: {
-            fontWeight: "bold",
+            fontFamily: CommonStyles.font.primary,
           },
         }}
       />

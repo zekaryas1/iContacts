@@ -8,7 +8,9 @@ export function ContactDetailInfoList({ contact }: { contact: Contact }) {
       <Text style={CommonStyles.mutedText}>Name</Text>
       <Text style={styles.detailInfoText}>{contact.name}</Text>
       <Text style={CommonStyles.mutedText}>Phone</Text>
-      <Text style={styles.detailInfoText} selectable>{contact.phone}</Text>
+      <Text style={styles.detailInfoText} selectable>
+        {contact.phone}
+      </Text>
       <Text style={CommonStyles.mutedText}>Is favorite</Text>
       <Text style={styles.detailInfoText}>
         {contact.isFavorite ? "Yes" : "No"}
@@ -19,5 +21,9 @@ export function ContactDetailInfoList({ contact }: { contact: Contact }) {
 
 const styles = StyleSheet.create({
   container: { marginBottom: 10 },
-  detailInfoText: { fontWeight: "bold", fontSize: 20, marginBottom: 15 },
+  detailInfoText: {
+    fontFamily: CommonStyles.font.primary,
+    fontSize: 20,
+    marginBottom: 15,
+  },
 });

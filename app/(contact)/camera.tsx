@@ -11,6 +11,7 @@ import {
 import Conditional from "../../components/Conditional";
 import ImagePreview from "../../components/camera/imagePreview";
 import CameraActions from "../../components/camera/cameraAction";
+import { CommonStyles } from "../../constants/CommonStyles";
 
 export default function Camera() {
   const [type, setType] = useState(CameraType.back);
@@ -70,12 +71,14 @@ export default function Camera() {
             title: "Permission to use camera",
           }}
         />
-        <Text style={{ textAlign: "center" }}>
+        <Text
+          style={{ textAlign: "center", fontFamily: CommonStyles.font.primary }}
+        >
           We need your permission to show the camera
         </Text>
         <Button
           onPress={requestPermission}
-          color={"#00ADB5"}
+          color={CommonStyles.color.primary}
           title="grant permission"
         />
       </View>
@@ -83,7 +86,7 @@ export default function Camera() {
   }
 
   return (
-    <View style={{ flex: 1, backgroundColor: "#222831" }}>
+    <View style={{ flex: 1, backgroundColor: CommonStyles.color.primaryDark }}>
       <Stack.Screen
         options={{
           title: "Take camera",
