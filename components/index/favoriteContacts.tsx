@@ -57,9 +57,11 @@ function FavoriteContact({
       <View style={favoriteContactStyles.container}>
         <Image
           style={favoriteContactStyles.image}
-          source={{
-            uri: contact.image,
-          }}
+          source={
+            contact.image == ""
+              ? require("../../assets/images/adaptive-icon.png")
+              : contact.image
+          }
           transition={1000}
         />
         <Text numberOfLines={2} style={favoriteContactStyles.contactName}>
@@ -78,6 +80,7 @@ const favoriteContactsStyles = StyleSheet.create({
     marginBottom: 10,
   },
   headerText: {
+    fontFamily: "SpaceMono",
     fontSize: 20,
     fontWeight: "bold",
     color: "#353535",
@@ -106,6 +109,7 @@ const favoriteContactStyles = StyleSheet.create({
     borderColor: "#00ADB5",
     borderRadius: 100,
     marginBottom: 5,
+    backgroundColor: "#393E46",
   },
   contactName: {
     textAlign: "center",

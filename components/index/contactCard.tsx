@@ -35,7 +35,11 @@ function DetailSection({ contact }: { contact: Contact }) {
       <View style={detailSectionStyles.profileImageContainer}>
         <Image
           style={detailSectionStyles.profileImage}
-          source={contact.image}
+          source={
+            contact.image == ""
+              ? require("../../assets/images/adaptive-icon.png")
+              : contact.image
+          }
           contentFit="fill"
           transition={1000}
         />
@@ -93,7 +97,7 @@ const detailSectionStyles = StyleSheet.create({
     height: 50,
     width: 50,
     borderRadius: 50,
-    backgroundColor: "blue",
+    backgroundColor: "#393E46",
   },
   profileImage: {
     flex: 1,

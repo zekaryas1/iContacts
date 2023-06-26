@@ -14,13 +14,16 @@ export function ContactProfileImage({
   return (
     <Pressable onPress={onPress}>
       <Image
-        source={{
-          uri: profileImageUri,
-        }}
+        source={
+          profileImageUri == ""
+            ? require("../../assets/images/adaptive-icon.png")
+            : profileImageUri
+        }
         style={{
           ...CommonStyles.contactPhoto,
           alignSelf: "center",
           marginBottom: 20,
+          backgroundColor: "#393E46",
         }}
       />
     </Pressable>

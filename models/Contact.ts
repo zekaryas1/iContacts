@@ -17,7 +17,7 @@ export const EmptyContact: Contact = {
   id: 0,
   name: "",
   phone: "",
-  image: "https://via.placeholder.com/150x150.png?text=No+Contact+Image",
+  image: "",
   isFavorite: 0,
 };
 
