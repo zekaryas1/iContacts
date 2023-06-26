@@ -22,7 +22,7 @@ export function ContactCard({
         ...contactCardStyles.container,
         borderLeftColor: contact.isFavorite
           ? CommonStyles.color.primary
-          : CommonStyles.color.secondaryDark,
+          : "rgba(0, 0, 10, 0.2)",
       }}
     >
       <Pressable onPress={onDetailPress}>
