@@ -73,7 +73,11 @@ export default function Camera() {
         <Text style={{ textAlign: "center" }}>
           We need your permission to show the camera
         </Text>
-        <Button onPress={requestPermission} title="grant permission" />
+        <Button
+          onPress={requestPermission}
+          color={"#00ADB5"}
+          title="grant permission"
+        />
       </View>
     );
   }
