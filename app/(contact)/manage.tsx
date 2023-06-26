@@ -130,7 +130,7 @@ export default function AddContact() {
       />
 
       <TextInput
-        placeholder="Name"
+        placeholder="First and last name"
         value={contact.name}
         keyboardType="name-phone-pad"
         onChangeText={(value) => {
@@ -170,7 +170,7 @@ export default function AddContact() {
       >
         <Text
           style={{
-            fontFamily: CommonStyles.font.primary,
+            fontFamily: CommonStyles.font.secondary,
           }}
         >
           is user on favorite list?

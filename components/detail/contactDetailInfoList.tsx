@@ -5,7 +5,7 @@ import { Contact } from "../../models/Contact";
 export function ContactDetailInfoList({ contact }: { contact: Contact }) {
   return (
     <View style={styles.container}>
-      <Text style={CommonStyles.mutedText}>Name</Text>
+      <Text style={CommonStyles.mutedText}>Full Name</Text>
       <Text style={styles.detailInfoText}>{contact.name}</Text>
       <Text style={CommonStyles.mutedText}>Phone</Text>
       <Text style={styles.detailInfoText} selectable>
