@@ -25,6 +25,7 @@ import {
   getContactById,
   updateContact,
 } from "../../db/dbOperations";
+import * as FileSystem from "expo-file-system";
 
 export default function AddContact() {
   const { id } = useLocalSearchParams();
@@ -86,12 +87,18 @@ export default function AddContact() {
     }
   };
 
-  const deleteUser = () => {
-    deleteContact(contact).then((res) => {
+  const deleteUser = async () => {
+    try {
+      const updatedContact = await deleteContact(contact);
+      if (contact.image !== "") {
+        await FileSystem.deleteAsync(contact.image);
+      }
       DeviceEventEmitter.emit("event.reloadContacts", {});
       alert("Contact deleted successfully");
       navigation.dispatch({ type: "POP_TO_TOP" });
-    });
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   const listenToCameraEvent = () => {
