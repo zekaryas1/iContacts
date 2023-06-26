@@ -1,23 +1,28 @@
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
-import { SplashScreen, Stack } from 'expo-router';
-import { useEffect } from 'react';
-import { useColorScheme } from 'react-native';
+import FontAwesome from "@expo/vector-icons/FontAwesome";
+import {
+  DarkTheme,
+  DefaultTheme,
+  ThemeProvider,
+} from "@react-navigation/native";
+import { useFonts } from "expo-font";
+import { SplashScreen, Stack } from "expo-router";
+import { useEffect } from "react";
+import { useColorScheme } from "react-native";
+import { createContactTable, dropContactTable } from "../db/dbOperations";
 
 export {
   // Catch any errors thrown by the Layout component.
   ErrorBoundary,
-} from 'expo-router';
+} from "expo-router";
 
 export const unstable_settings = {
   // Ensure that reloading on `/modal` keeps a back button present.
-  initialRouteName: '(tabs)',
+  initialRouteName: "index",
 };
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
     ...FontAwesome.font,
   });
 
@@ -25,6 +30,19 @@ export default function RootLayout() {
   useEffect(() => {
     if (error) throw error;
   }, [error]);
+
+  //setup database
+  useEffect(() => {
+    // dropContactTable().then(() => {
+    createContactTable()
+      .then(() => {
+        console.log("Database connection successful, Table created");
+      })
+      .catch(() => {
+        console.log("Table creation failed, May be Table already exists");
+      });
+    // });
+  }, []);
 
   return (
     <>
@@ -37,14 +55,23 @@ export default function RootLayout() {
 
 function RootLayoutNav() {
   const colorScheme = useColorScheme();
+  //colorScheme === "dark" ? DarkTheme : DefaultTheme
 
   return (
     <>
-      <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-        <Stack>
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
-        </Stack>
+      <ThemeProvider value={DefaultTheme}>
+        <Stack
+          initialRouteName="index"
+          screenOptions={{
+            headerStyle: {
+              backgroundColor: "#222831",
+            },
+            headerTintColor: "#EEEEEE",
+            headerTitleStyle: {
+              fontWeight: "bold",
+            },
+          }}
+        />
       </ThemeProvider>
     </>
   );
