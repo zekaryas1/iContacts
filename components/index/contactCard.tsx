@@ -17,7 +17,14 @@ export function ContactCard({
   onCallPress,
 }: ContactCardProps) {
   return (
-    <View style={contactCardStyles.container}>
+    <View
+      style={{
+        ...contactCardStyles.container,
+        borderLeftColor: contact.isFavorite
+          ? CommonStyles.color.primary
+          : CommonStyles.color.secondaryDark,
+      }}
+    >
       <Pressable onPress={onDetailPress}>
         <DetailSection contact={contact} />
       </Pressable>
@@ -116,7 +123,6 @@ const contactCardStyles = StyleSheet.create({
     marginBottom: 10,
     height: 70,
     borderRadius: 5,
-    borderLeftColor: CommonStyles.color.primary,
     borderLeftWidth: 2,
     flexDirection: "row",
     justifyContent: "space-between",
