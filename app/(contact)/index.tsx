@@ -189,11 +189,7 @@ function NoContact({
       >
         Click The plus icon on the header to add or
       </Text>
-      <Button
-        title="Reload"
-        color={CommonStyles.color.primary}
-        onPress={onReloadPress}
-      />
+      <Button title="Reload" color={CommonStyles.color.primary} onPress={onReloadPress} />
     </View>
   );
 }
