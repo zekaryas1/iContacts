@@ -89,7 +89,7 @@ export default function Camera() {
     <View style={{ flex: 1, backgroundColor: CommonStyles.color.primaryDark }}>
       <Stack.Screen
         options={{
-          title: "Take camera",
+          title: "Take picture",
         }}
       />
 
